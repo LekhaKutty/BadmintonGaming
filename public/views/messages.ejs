@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/messages.css">
+        <title>Badminton Gaming News</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <a href="/">Home</a>
+            <a href="/players">Players</a>
+            <a href="/games">Games</a>
+            <a href="/results" >Results</a>
+            <a href="/news">News</a>
+            <a href="#" class="active">Messages</a>
+        </div>
+        <div class="head-pic">
+            <div class="side-image"></div>
+            <div class="main">
+                <h1>Badminton Gaming</h1>
+            </div>
+        </div>
+            
+        <div class="topnav">
+            <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+            <a href="/signup">SignUp</a>
+            <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
+            <a href="#">About</a>
+        </div>
+        <div class="display_msginfo" >
+            <table id= "t01">
+                <tr>
+                    <th>Date and Time</th>
+                    <th>Location</th>
+                    <th>Message</th>
+                    <th>Sender</th>
+                    <th>Accept/Reject</th>
+                </tr>
+                <% info.forEach(function(infos){ %>
+                <tr>
+                    <td><%= infos.time %></td>
+                    <td><%= infos.location %></td>
+                    <td><%= infos.message %></td>
+                    <td><%= infos.sender %></td>
+                    <td>
+                        <button value="<%= name %>" message_id = "<%= infos._id %>" player1_id = "<%= ID %>" player2_id = "<%= infos.sender_id %>" class="accept_btn" method="post",action="/postgame/">Accept</button>
+                        <button onclick="location.href='deletegame/<%= infos._id %>'" value="<%= name %>" class="reject_btn" type="button">Reject</button>
+                    </td>
+                    
+                </tr>
+                <% }) %>
+            </table>
+        </div>
+        <script src="scripts/accept_games.js"></script> 
+    </body>
+</html>

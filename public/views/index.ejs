@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <title>Badminton Gaming Home</title>
+    </head>
+    <body>
+    
+      <div class="sidebar">
+        <a href="#" class="active">Home</a>
+        <a href="/players">Players</a>
+        <a href="/games">Games</a>
+        <a href="/results">Results</a>
+        <a href="/news">News</a>
+        <%- (ID)? '<a href="/messages">Messages</a>' : '' %>
+        
+      </div>
+      <div class="head-pic">
+        <div class="side-image"></div>
+        <div class="main">
+            <h1>Badminton Gaming</h1>
+        </div>
+      </div>
+      
+      <div class="topnav">
+        <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+        <a href="/signup">SignUp</a>
+        <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
+        <a href="#">About</a>
+      </div>
+    </body>
+</html>

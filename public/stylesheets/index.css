@@ -1,0 +1,123 @@
+body {
+    margin:0;
+  }
+  @font-face {
+      font-family: Junicode-BoldItalic;
+      src: url('fonts/Junicode-BoldItalic.ttf');
+      font-family: Wake The Warrior Regular;
+      src: url('fonts/Wake_The_Warrior_-_TTF.ttf');
+      font-weight: bold;
+    }
+  .sidebar {
+      top:265px;
+      height: 100%;
+      width: 15%;
+      position: fixed;
+      z-index: 1000;
+      font-style: oblique;
+      left: 0;
+      background-color: black;
+      /*overflow-x: hidden;*/
+      padding-top: 30px;
+  }
+  .sidebar a {
+    padding: 30px 8px 10px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    /*font-family: Junicode-BoldItalic;*/
+    font-family: Wake The Warrior Regular;
+    text-align: center;
+  }
+  .sidebar a:hover {
+      color: #818181;
+  }
+  .sidebar a:hover:not(.active) {
+      background-color:#333;
+  }  
+  .active {
+  background-color:#333;
+  color:white;
+  }
+  .head-pic{
+      width: 100%;
+      height: auto;
+  }
+  .side-image{
+      background-image: url('images/headerback1.jpg');
+      height:175px;
+      width:15%;
+      float:left;
+      padding: 20px;
+  }
+  .main {
+      margin-left: 15%; 
+      font-size: 28px; 
+      background-image: url("images/headerback.jpg");
+      height: 175px;
+      padding: 20px;
+      text-align: center;
+      color:white;
+      
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(16, 15, 94);
+  }
+  .topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .topnav p{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+  }
+  .form{
+      margin-left: 20%; /* Same as the width of the sidenav */
+      /*font-size: 28px; /* Increased text to enable scrolling */
+      margin-top: 50px;
+      padding: 0px 10px;
+      justify-content: center;
+  }
+  .main h1{
+      /*text-align: centre;*/
+      font-family: Wake The Warrior Regular;
+      font-style: italic;
+  }
+  @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+  }
+  #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left:20%;
+      min-height: 100%;
+      top:140px;
+  }
+  .btnLog {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      font-style: italic;
+      font-weight: bold;
+  }
+  .btn-div{
+     
+      right: 0;
+  }
+  .players-data{
+      margin-left: 15%;
+  }

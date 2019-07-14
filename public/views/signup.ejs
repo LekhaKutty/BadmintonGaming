@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <title>Badminton Gaiming SignUp</title>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/games">Games</a>
+        <a href="/results">Results</a>
+        <a href="/news">News</a>
+    </div>
+    <div class="head-pic">
+            <div class="side-image"></div>
+            <div class="main">
+                <h1>Badminton Gaming</h1>
+            </div>
+    </div>
+    <div class="topnav">
+        <a href="/signup">SignUp</a>
+        <a href="/login">LogIn</a>
+        <a href="#">About</a>
+    </div>
+    <div class = "form">
+        <form action="/signup" method = "POST">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input class="form-control" type="text" name="firstname" id="firstname" placeholder="First Name" required />
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last Name" required />
+            </div>
+            <div class="form-group">
+                <label for="mobilenumber">Mobile Number</label>
+                <input class="form-control" type="text" name="mobilenumber" id="mobilenumber" placeholder="Mobile Number"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" name="email" id="email" placeholder="user@user.com" required />
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input class="form-control" type="text" name="country" id="country" placeholder="Country" required />
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+            </div>
+            <div class="form-group">
+                <label for="passwordRepeat">Repeat Password</label>
+                <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="********" required />
+            </div>
+            <div class="m-t-lg">
+                <input class="btn btn--form" type="submit" value="Register" />
+                <a class="signup__link" href="/login">I am already a member</a>
+            </div>
+        </form>
+    </div>   
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <title>Badminton Gaming Login</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <a href="/">Home</a>
+            <a href="/players">Players</a>
+            <a href="/results">Results</a>
+            <a href="/games">Games</a>
+            <a href="/news">News</a>
+        </div>
+        <div class="head-pic">
+                <div class="side-image"></div>
+                <div class="main">
+                    <h1>Badminton Gaming</h1>
+                </div>
+        </div>
+        <div class="topnav">
+            <a href="/signup">SignUp</a>
+            <a href="/login">LogIn</a>
+            <a href="#">About</a>
+        </div>
+        <div class = "form">
+            <form action="/login" method = "POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+                </div>
+                <div class="m-t-lg">
+                    <input class="btn btn--form" type="submit" value="LogIn" />
+                    <a class="signup__link" href="/signup">New members register here</a>
+                </div>
+            </form>
+            
+        </div>
+
+    </body>
+</html>

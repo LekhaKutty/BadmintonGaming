@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/players.css">
+        <title>Badminton Gaming Players</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <a href="/">Home</a>
+            <a href="#" class="active">Players</a>
+            <a href="/games">Games</a>
+            <a href="/results">Results</a>
+            <a href="/news">News</a>
+            <%- (ID)? '<a href="/messages">Messages</a>' : '' %>
+        </div>
+        <div class="head-pic">
+            <div class="side-image"></div>
+            <div class="main">
+                <h1>Badminton Gaming</h1>
+            </div>
+        </div>
+        <div class="topnav">
+            <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+            <a href="/signup">SignUp</a>
+            <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>
+            <a href="#">About</a>
+        </div>
+        <div class = "players-data">
+            <table id= "t01">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <% if (ID) { %> <th>Mobile Number</th> <th>Email</th> <th>Request</th> <% } %>
+                </tr>
+                <% users.forEach(function(user){ %>
+                <tr>
+                    <td><%= user.firstname %></td>
+                    <td><%= user.lastname %></td>
+                    <% if (ID) { %> <td><%= user.mobilenumber %></td> <td><%= user.email %></td> <% } %>
+                    <% if ((ID)&&(user._id != ID)) { %> <td><button value=<%= user._id %> class="btnRequest" >Request</button></td> <% } %>
+                    
+                </tr>
+                <% }) %>
+            </table>
+            <div id="myModal" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form action="/post_message" method = "POST">
+                        Date and Time:
+                        <input type="datetime-local" name="time">
+                        Location :
+                        <input type="text" name="location">
+                        Message:
+                        <input type="text" name="message">
+
+                        <p id = "hidden" ></p>
+                        
+                        <input type="submit" value="Send">
+                        
+                    </form>
+                </div>
+            
+            </div>
+        </div>
+        <script src="scripts/request_game.js"></script> 
+    </body>
+</html>
