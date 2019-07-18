@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/games.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/gamelist.css">
         <title>Badminton Gaming Games</title>
     </head>
     <body>
@@ -23,82 +24,95 @@
         </div>
             
         <div class="topnav">
-            <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+            <% if (ID) { %>  <p id = "username">Welcome <%= name %></p> <% } %>
             <a href="/signup">SignUp</a>
             <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
             <a href="#">About</a>
         </div>
         <div class="display_gameinfo" >
-            <table id= "t01">
-                <tr>
-                    <th>Player 1</th>
-                    <th>Player 2</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Game 1</th>
-                    <th>Game 2</th>
-                    <th>Game 3</th>
-                    <th>Result</th>
-                    <th></th>
-                </tr>
-                <% games.forEach(function(game){ %>
-                    <tr>
-                        <td><%= game.player1 %></td>
-                        <td><%= game.player2 %></td>
-                        <td><%= game.date %></td>
-                        <td><%= game.location %></td>
+    
+        <div class="wrap">
+            <div class="table">
+                <ul>
+                    <% games.forEach(function(game){ %>
                         <% if (((game.player1_id === ID) || (game.player2_id === ID)) && (game.game_details.length === 0)) { %>
-                            <form id="result_form" class="form_result" method="post" action="/updateResult">
-                                    <td>
-                                      <span class="inline">
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player1_score1" value="" placeholder="00"/>
-                                      </span>
-                                      <span>
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player2_score1" value="" placeholder="00"/>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span class="inline">
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player1_score2" value="" placeholder="00"/>
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player2_score2" value="" placeholder="00"/>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span class="inline">
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player1_score3" value="" placeholder="00"/>
-                                        <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
-                                        name="player2_score3" value="" placeholder="00"/>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span class="inline">
-                                        <input type="number" min="0" max="4" step="1" id="n1" pattern="\d+"
-                                        name="player1_result" value="" placeholder="00"/>
-                                        <input type="number" min="0" max="4" step="1" id="n1" pattern="\d+"
-                                         name="player2_result" value="" placeholder="00"/>
-                                      </span>
-                                    </td>
-                                    <td>
-                                       <input type="hidden" id="status" name="status" value="finished">
-                                       <input type="hidden" id="status" name="gameId" value="<%= game._id %>">
-                                       <input type="submit" value="Result"/>
-                                    </td>
-                            </form>
-                        <% } 
-                        else if((game.game_details.length !== 0)){ %>  
-                           <td><%= game.game_details[0].player1_score1 %>/<%= game.game_details[0].player2_score1 %></td>
-                            <td><%= game.game_details[0].player1_score2 %>/<%= game.game_details[0].player2_score2 %></td>
-                            <td><%= game.game_details[0].player1_score3 %>/<%= game.game_details[0].player2_score3 %></td>
-                            <td><%= game.game_details[0].player1_result %>/<%= game.game_details[0].player2_result %></td>
-                         <% } %>
-                    </tr>
-                <% }) %>
-            </table>
+                    <li>
+                        <div class="top">
+                            <h4><%= game.player1 %>   vs   <%= game.player2 %></h4>
+                        </div>
+                        <div class="bottom">
+                            <p>Date  :<span><%= game.date %></span></p>
+                            <p>Location  :<span><%= game.location %></span></p>
+                            
+                                <form id="result_form" class="form_result" method="post" action="/updateResult">
+                                        <li>
+                                          <span class="inline">
+                                            <p>First Game</p>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player1_score1" value="" placeholder="Player1"/>
+                                          </span>
+                                          <span>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player2_score1" value="" placeholder="Player2"/>
+                                          </span>
+                                        </li>
+                                        <li>
+                                          <span class="inline">
+                                            <p>Second Game</p>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player1_score2" value="" placeholder="Player1"/>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player2_score2" value="" placeholder="Player2"/>
+                                          </span>
+                                        </li>
+                                        <li>
+                                          <span class="inline">
+
+                                            <p>Third Game</p>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player1_score3" value="" placeholder="Player1"/>
+                                            <input type="number" min="0" max="29" step="1" id="n1" pattern="\d+"
+                                            name="player2_score3" value="" placeholder="Player2"/>
+                                          </span>
+                                        </li>
+                                        <li>
+                                          <span class="inline">
+                                            <p>Result</p>
+                                            <input type="number" min="0" max="4" step="1" id="n1" pattern="\d+"
+                                            name="player1_result" value="" placeholder="Player1"/>
+                                            <input type="number" min="0" max="4" step="1" id="n1" pattern="\d+"
+                                             name="player2_result" value="" placeholder="Player2"/>
+                                          </span>
+                                        </li>
+                                        <li>
+                                           <input type="hidden" id="status" name="status" value="finished">
+                                           <input type="hidden" id="status" name="gameId" value="<%= game._id %>">
+                                           <div class="sign">
+                                            <input class="button" type="submit" value="Add Result"/>
+                                         </div>
+                                        </li>
+                                </form>
+                                </li>
+                            <% } 
+                            else if((game.game_details.length === 0)) { %>
+                                <li>
+                                    <div class="top">
+                                        <h4><%= game.player1 %>   vs   <%= game.player2 %></h4>
+                                    </div>
+                                    <div class="bottom">
+                                        <p>Date  :<span><%= game.date %></span></p>
+                                        <p>Location  :<span><%= game.location %></span></p>
+                                </li>
+                            <% } %>
+                        
+                    <% }) %>
+                            
+                    </div>
+                   
+                </ul>
+            </div>
+        </div>
+                    
         </div>
         <script src="scripts/games.js"></script> 
     </body>

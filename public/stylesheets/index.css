@@ -12,7 +12,7 @@ body {
       top:265px;
       height: 100%;
       width: 15%;
-      position: fixed;
+      position:absolute;
       z-index: 1000;
       font-style: oblique;
       left: 0;
@@ -43,6 +43,9 @@ body {
   .head-pic{
       width: 100%;
       height: auto;
+  }
+  #username{
+    text-transform: uppercase;
   }
   .side-image{
       background-image: url('images/headerback1.jpg');

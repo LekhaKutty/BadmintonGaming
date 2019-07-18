@@ -22,7 +22,7 @@
         </div>
             
         <div class="topnav">
-            <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+            <% if (ID) { %>  <p id = "username">Welcome <%= name %></p> <% } %>
             <a href="/signup">SignUp</a>
             <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
             <a href="#">About</a>

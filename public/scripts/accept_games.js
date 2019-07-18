@@ -24,8 +24,8 @@ for (let i = 0; i < allButtons.length; i++) {
                 }
                
             }).then((res) => res.json())
-            .then((data) => console.log(data))
+            //.then((data) => console.log(data))
             .catch((err) => console.log(err))
         }
-        
+        this.removeEventListener('click', addGame);
 }

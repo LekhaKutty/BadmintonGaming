@@ -2,16 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-const mongo = require('mongodb');
-
-const {getDburl} = require("./../db.js");
-
-const URL = getDburl();
+//const URL = getDburl();
 const BadmintonData = require('../models/registerdata');
 //let database;
-mongo.connect(URL, { useNewUrlParser: true }, (err, db) => {
+/*mongo.connect(URL, { useNewUrlParser: true }, (err, db) => {
     database = db.db("BadmintonData");
-});
+});*/
 
 router.post('/',(req,res)=>{
     console.log(req.body);

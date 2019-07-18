@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/games.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/gamelist.css">
         <title>Badminton Gaming Results</title>
     </head>
     <body>
@@ -22,11 +24,35 @@
         </div>
             
         <div class="topnav">
-            <% if (ID) { %>  <p>Welcome <%= name %></p> <% } %>
+            <% if (ID) { %>  <p id = "username">Welcome <%= name %></p> <% } %>
             <a href="/signup">SignUp</a>
             <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
             <a href="#">About</a>
         </div>
-
+        <div class="display_gameinfo" >
+            <div class="wrap">
+                <div class="table">
+                    <ul>
+                        <% games.forEach(function(game){ %>
+                            <% if ((game.game_details.length !== 0)){ %>
+                                <li>
+                                    <div class="top">
+                                        <h4><%= game.player1 %>   vs   <%= game.player2 %></h4>
+                                    </div>
+                                    <div class="bottom">
+                                        <p>Date  :<span><%= game.date %></span></p>
+                                        <p>Location  :<span><%= game.location %></span></p>
+                                        <p>Game 1 :<span><%= game.game_details[0].player1_score1 %>/<%= game.game_details[0].player2_score1 %></span></p>
+                                        <p>Game 2  :<span><%= game.game_details[0].player1_score2 %>/<%= game.game_details[0].player2_score2 %></span></p>
+                                        <p>Game 3  :<span><%= game.game_details[0].player1_score3 %>/<%= game.game_details[0].player2_score3 %></span></p>
+                                        <p>Result  :<span><%= game.game_details[0].player1_result %>/<%= game.game_details[0].player2_result %></span></p>
+                                    </div>
+                                </li>
+                            <% } %>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

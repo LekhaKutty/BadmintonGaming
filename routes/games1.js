@@ -2,6 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
+const mongo = require('mongodb');
+
+
 const GameData = require('../models/gamedata');
 
 const BadmintonData = require('../models/registerdata');
@@ -19,14 +22,13 @@ router.get('/',(req,res)=>{
     })
     //res.render('games', {ID: userId, name:username});
 })
-router.post('/',(req,res,next)=>{
+router.post('/',(req,res)=>{
     let userId = req.session.userId;
     let id = req.body.message_id;
     console.log('****');
     console.log(req.body);
     console.log('****');
     //console.log(userId);
-    
     const newGame = new GameData(req.body);
     newGame.save()
         .then(()=>{
@@ -38,15 +40,12 @@ router.post('/',(req,res,next)=>{
                     else{
                         console.log("deleted");
                         //res.redirect('/');
-                        next();
-                       
                     }
-                   //return res.redirect('/messages');
                 });
             console.log(req.session.userId);
+            res.redirect('/messages');/*This is not redirecting*/
         })
         .catch((err)=>console.log(err))
     //res.status(200).send();   
-    res.redirect('/messages');
 });
 module.exports = router;
