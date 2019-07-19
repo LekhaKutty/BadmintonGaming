@@ -2,20 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
         <title>Badminton Gaming Home</title>
     </head>
     <body>
     
-      <div class="sidebar">
-        <a href="#" class="active">Home</a>
-        <a href="/players">Players</a>
-        <a href="/games">Games</a>
-        <a href="/results">Results</a>
-        <a href="/news">News</a>
-        <%- (ID)? '<a href="/messages">Messages</a>' : '' %>
-        
-      </div>
+     
       <div class="head-pic">
         <div class="side-image"></div>
         <div class="main">
@@ -29,5 +23,21 @@
         <%- (ID)? '<a href= "/logout" >LogOut</a>' : '<a href= "/login" >LogIn</a>' %>          
         <a href="#">About</a>
       </div>
+      <div class = "bottom">
+        <div class="sidebar">
+          <a href="#" class="active">Home</a>
+          <a href="/players">Players</a>
+          <a href="/games">Games</a>
+          <a href="/results">Results</a>
+          <a href="/news">News</a>
+          <%- (ID)? '<a href="/messages">Messages</a>' : '' %>
+        </div>
+        
+            <video class="video" autoplay muted loop id="myVideo">
+                <source src="../stylesheets/video/video.mp4" type="video/mp4">
+            </video>
+        
+      </div>
+     
     </body>
 </html>

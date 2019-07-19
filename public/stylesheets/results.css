@@ -1,0 +1,141 @@
+/*.wrap {
+    width:1000px;
+    margin:0 auto;
+    text-align:left;
+    color:black;
+  }
+  .table {
+    background-color:#ffffff; 
+    height:325px;
+    width:100%;
+    margin-top:50px;  
+  }
+
+ul li{
+    list-style: none;
+    
+    float:left;
+    width:1000px;
+    text-align:center;
+
+}
+.top {
+    background-color:rgb(254, 246, 255);
+    height:40px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+  .bottom {
+  
+    p {
+       font-size:13px;
+       font-family: 'Droid Serif', sans-serif;
+       padding:5px;
+       span {
+       font-weight:bold; 
+      }
+    }
+  }
+  
+  .sign {
+    margin-top:25px;
+  }
+      .button {
+        background-color: #EAE9E4;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        font-size:16px;
+        font-weight: bold;
+        line-height: 1.4;
+        padding: 10px;
+        width: 180px;
+     }
+  }
+  
+  .purple {
+    background-color:#5D4660;   
+  }
+  
+  .white {
+   color:#FFFFFF; 
+  }
+  
+  .pink {
+    background-color:#BC9B94;
+  }
+  */
+
+  .wrap {
+    width:1200px;
+    margin:0 auto;
+    text-align:left;
+    color:black;
+  }
+  
+  .table {
+    background-color:#ffffff; 
+    height:325px;
+    width:100%;
+    margin-top:50px;  
+  }
+  
+  ul li {
+    list-style: none;
+    float:left;
+    width:199px;
+    text-align:center;
+    border-left:1px solid #DDDCD8;
+  }
+  
+  .top {
+    background-color:#EAE9E4;
+    height:75px;
+    h1 {
+      padding-top:20px;
+    }
+  }
+  
+  
+  .bottom {
+  margin-top:50px;
+    p {
+       font-size:13px;
+       font-family: 'Droid Serif', sans-serif;
+       padding:5px;
+      span {
+       font-weight:bold; 
+      }
+    }
+  }
+  
+  .sign {
+    margin-top:50px;
+      .button {
+     border: 1px solid #989A8F;
+     padding: 10px 40px;
+     -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+     border-radius: 6px;
+     color: #989A8F;
+     font-size: 14px;
+     text-decoration: none;
+     vertical-align: middle;
+      font-size:17px;
+     }
+  }
+  
+  .purple {
+    background-color:#5D4660;   
+  }
+  
+  .white {
+   color:#FFFFFF; 
+  }
+  
+  .pink {
+    background-color:#BC9B94;
+  }
+  

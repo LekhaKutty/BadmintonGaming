@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
     <title>Badminton Gaiming SignUp</title>
 </head>
 <body>
@@ -25,44 +26,48 @@
         <a href="#">About</a>
     </div>
     <div class = "form">
+        <h2>Register Form</h2>
         <form action="/signup" method = "POST">
+        <div class="container">
             <div class="form-group">
-                <label for="firstname">First Name</label>
+                <label for="firstname"><b>First Name</b></label>
                 <input class="form-control" type="text" name="firstname" id="firstname" placeholder="First Name" required />
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name</label>
+                <label for="lastname"><b>Last Name</b></label>
                 <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last Name" required />
             </div>
             <div class="form-group">
-                <label for="mobilenumber">Mobile Number</label>
+                <label for="mobilenumber"><b>Mobile Number</b></label>
                 <input class="form-control" type="text" name="mobilenumber" id="mobilenumber" placeholder="Mobile Number"/>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email"><b>Email</b></label>
                 <input class="form-control" type="text" name="email" id="email" placeholder="user@user.com" required />
             </div>
             <div class="form-group">
-                <label for="country">Country</label>
+                <label for="country"><b>Country</b></label>
                 <input class="form-control" type="text" name="country" id="country" placeholder="Country" required />
             </div>
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username"><b>Username</b></label>
                 <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
             </div>
             
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password"><b>Password</b></label>
                 <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
             </div>
             <div class="form-group">
-                <label for="passwordRepeat">Repeat Password</label>
+                <label for="passwordRepeat"><b>Repeat Password</b></label>
                 <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="********" required />
             </div>
-            <div class="m-t-lg">
-                <input class="btn btn--form" type="submit" value="Register" />
-                <a class="signup__link" href="/login">I am already a member</a>
+            <button type="submit">Register</button>
+            <div  id = "register" style="background-color:#f1f1f1">
+                    <a class="signup__link" href="/login">I am already a member</a>
             </div>
+         </div>
+        </div>
         </form>
     </div>   
     

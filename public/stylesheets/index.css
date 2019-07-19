@@ -46,6 +46,8 @@ body {
   }
   #username{
     text-transform: uppercase;
+    text-justify: newspaper;
+    font-size: 14px;
   }
   .side-image{
       background-image: url('images/headerback1.jpg');
@@ -96,31 +98,4 @@ body {
       font-family: Wake The Warrior Regular;
       font-style: italic;
   }
-  @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-  }
-  #myVideo {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      left:20%;
-      min-height: 100%;
-      top:140px;
-  }
-  .btnLog {
-      background-color: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      font-style: italic;
-      font-weight: bold;
-  }
-  .btn-div{
-     
-      right: 0;
-  }
-  .players-data{
-      margin-left: 15%;
-  }
+ 
